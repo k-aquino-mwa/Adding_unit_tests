@@ -1,14 +1,25 @@
-def check_guess(secret, guess):
-    if guess == secret:
-        return "Correct!"
-    elif guess < secret:
-        return "Too low!"
-    else:
-        return "Too high!"
+import random
 
-def play_guess_game(secret=5, input_func=input, print_func=print):
-    print_func("Welcome to the guessing game!")
-    guess = int(input_func("Guess a number: "))
-    result = check_guess(secret, guess)
-    print_func(result)
-    return result
+def guessing_game():
+    number_to_guess = random.randint(1, 100)
+    attempts = 0
+    print("Welcome to the Number Guessing Game!")
+    print("I'm thinking of a number between 1 and 100")
+
+    while True:
+        try:
+            guess = int(input("Take a guess: "))
+            attempts += 1
+    
+        if guess < number_to guess:
+            print("Too low! Try Again.")
+        elif guess > number_to guess:
+            print("Too high! Try Again.")
+        else 
+            print("Congratulations! You guessed the number in {attempts} attempts.")
+            break
+    except ValueError:
+        print("Please enter a valid integer.")
+
+if __name__ ==  "__main__":
+    guessing_game()
